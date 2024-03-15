@@ -10,9 +10,11 @@
       crossorigin="anonymous"
     />
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e7aeaed0280ba9bbc884537104a02177&libraries=services"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/map.css">
     <title>저기요 EXCUSE ME</title>
 </head>
 <style>
@@ -29,7 +31,7 @@
                 <ul class="navbar-nav ms-auto me-2 grid gap-4">
                     <li class = "navbar-item">
                         <!-- 여기서 지도 html 추가해주세요!!!-->
-                        <a href = "" class="nav-link active fs-5" aria-current="page" href="#">관광지 찾기</a>
+                        <a class="nav-link active fs-5" aria-current="page">관광지 찾기</a>
                     </li>
                     <li class = "navbar-item">
                         <a href = "../html/board.html" class="nav-link active fs-5" aria-current="page" href="#">게시판</a>
@@ -57,7 +59,7 @@
                 <div class = 'container-1-left'>
                     <p><span class = 'text-impact'>저기요 Excuse me</span>에서<br> 대한민국에 숨겨진 관광지를<br>찾아보세요!</p>
                     <div class = 'container-1-buttons'>
-                        <a class = 'btn-1'>관광지 찾으러가기 ></a>
+                        <a class = 'btn-1' id="mapBtn">관광지 찾으러가기 ></a>
                         <a class = 'btn-2'>후기 보러 가기 ></a>
                     </div>
                 </div>
@@ -107,6 +109,50 @@
                 
             </div>
         </div>
+        <div id="myModal">
+            <!-- Modal content -->
+            <div id="myModal-content">
+                <span class="close">&times;</span>
+                <div id="search">
+                    <select id="areaCode">
+                        <option value="">🗺지역</option>
+                        <option value="1">서울</option>
+                        <option value="2">인천</option>
+                        <option value="3">대전</option>
+                        <option value="4">대구</option>
+                        <option value="5">광주</option>
+                        <option value="6">부산</option>
+                        <option value="7">울산</option>
+                        <option value="8">세종특별자치시</option>
+                        <option value="31">경기도</option>
+                        <option value="32">강원도</option>
+                        <option value="33">충청북도</option>
+                        <option value="34">충청남도</option>
+                        <option value="35">경상북도</option>
+                        <option value="36">경상남도</option>
+                        <option value="37">전라북도</option>
+                        <option value="38">전라남도</option>
+                        <option value="39">제주도</option>
+                    </select>
+                    <select id="contentTypeId">
+                        <option value="">🏂관광타입</option>
+                        <option value="12">관광지</option>
+                        <option value="14">문화시설</option>
+                        <option value="15">축제공연행사</option>
+                        <option value="25">여행코스</option>
+                        <option value="28">레포츠</option>
+                        <option value="32">숙박</option>
+                        <option value="38">쇼핑</option>
+                        <option value="39">음식점</option>
+                    </select>
+                    <button onclick="searchTouristSpots()">검색</button>
+                </div>
+                <div id="container">
+                    <div id="map"></div>
+                    <div id="sidebar"></div>
+                </div>
+            </div>
+        </div>
     </main>
     <footer class="navbar bg-dark nav justify-content-center pt-4 pb-4" data-bs-theme="dark">
         <p class = "text-light">© SSAFY 광주_4반 김민주 박지훈 신민경 이지표</p>
@@ -115,9 +161,10 @@
 
 <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F    7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous">
 </script>
+<script src="../js/map.js"></script>
 <script type = "module" src = "../js/main.js"></script>
 <script>
     AOS.init();
