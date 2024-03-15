@@ -1,0 +1,116 @@
+*{
+    font-family: 'Pretendard';
+    margin:0;
+    padding:0;
+    box-sizing: unset;
+}
+p{
+    margin:0;
+}
+main{
+    min-height: 100vh;
+    background-color: #F5F5F5;
+}
+.container-fluid{
+    max-width:1280px;
+    display: flex;
+    
+}
+.text-impact{
+    color : #1E78FF;
+}
+.container-1{
+    width: 100%;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+.container-1-div{
+    display : flex;
+    width:1280px;
+    justify-content: space-between;
+    padding:100px 48px 100px 48px;
+}
+.container-1-left {
+    display:flex;
+    flex-direction: column;
+    gap:25px;
+    
+}
+.explain-text{
+    display: flex;
+    flex-direction: column;
+    gap:32px;
+    
+}
+.container-1-left p{
+    font-size: 48px;
+    word-spacing: -8px;
+}
+.container-1-buttons{
+    display: flex;
+    margin-top: 24px;
+    gap:12px;
+}
+.container-1-buttons a{
+    outline-style: none;
+    padding: 8px 24px 8px 24px;
+    border-radius: 10px;
+    font-size:24px;
+    text-decoration-line: none;
+}
+
+.btn-1{
+    border: none;
+    background-color: #1E78FF;
+    border-color: #1E78FF;
+    color:white;
+}
+.btn-2{
+    background-color: white;
+    border: 1px #1E78FF solid;
+    color:#1E78FF;
+}
+.container-1-img{
+    width:474px;
+    height:316px;
+}
+
+.explain-bold{
+    font-size: 36px;
+    font-weight: 600;
+}
+.explain-light{
+    font-size:30px;
+    font-weight: 200;
+}
+
+.explain-container1-div{
+    width: 100%;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    margin:48px 0px 48px 0px;
+}
+.explain-container1{
+    display:flex;
+    align-items: center;
+    gap:112px;
+    margin:48px 0px 48px 0px;
+}
+.container-2,.container-3{
+    background-color: white;
+}
+.container-3-div{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 64px;
+    margin-top: 200px;
+}
+.container-3-div p{
+    text-align: center;
+    margin-top: 36px;
+}
