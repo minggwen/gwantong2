@@ -13,7 +13,7 @@ main{
 .button-container{
     width:80%;
     display: flex;
-    justify-content:flex-end;
+    justify-content:center;
 }
 .container-1{
     margin:48px;
@@ -40,9 +40,9 @@ main{
 }
 .button{
     outline-style: none;
-    padding: 4px 8px 4px 8px;
+    padding: 8px 24px 8px 24px;
     border-radius: 10px;
-    font-size:16px;
+    font-size:24px;
     text-decoration-line: none;
     background-color: white;
     border: 1px #1E78FF solid;
@@ -50,4 +50,7 @@ main{
 }
 .title-field{
     width: 90%;
+}
+.field-name{
+    font-size:24px;
 }
