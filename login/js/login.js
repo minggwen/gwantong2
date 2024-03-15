@@ -50,3 +50,7 @@ signup.addEventListener('click', function () {
         alert("등록되지 않은 아이디입니다!")
     }
 })
+
+function findpw() {
+    window.open("findpw.html", "비밀번호 찾기", "width=600, height=600, top=10, left=10")
+}

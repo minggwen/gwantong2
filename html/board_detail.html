@@ -7,6 +7,38 @@
     <title>게시글 상세보기</title>
 </head>
 <body>
+    <header class="navbar navbar-expand-lg bg-body-tertiary shadow-sm ps-5 pe-5" >
+        <div class = "container-fluid">
+            <a><img class = 'col-4 ms-4' src = '../img/nav_logo.png'></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <nav class="collapse navbar-collapse mr-1" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-2 grid gap-4">
+                    <li class = "navbar-item">
+                        <!-- 여기서 지도 html 추가해주세요!!!-->
+                        <a href = "../mytour/mytour_map.html" class="nav-link active fs-5" aria-current="page" href="#">나만의 여행계획</a>
+                    </li>
+                    <li class = "navbar-item">
+                        <a href = "../html/board.html" class="nav-link active fs-5" aria-current="page" href="#">게시판</a>
+                    </li>
+                    <li id = 'nav-login' class = "navbar-item">
+                        <a href = "../login/login.html" class="nav-link active fs-5" aria-current="page" href="#">로그인</a>
+                    </li>
+                    <li id = 'nav-signup' class = "navbar-item">
+                        <a href = "../login/signup.html" class="nav-link active fs-5" aria-current="page" href="#">회원가입</a>
+                    </li>
+                    <!--로그인 하면 display 변경해주기-->
+                    <li id = 'nav-logout' class = "navbar-item">
+                        <a href = "" class="nav-link active fs-5" aria-current="page" href="#" >로그아웃</a>
+                    </li>
+                    <li id = 'nav-mypage' class = "navbar-item">
+                        <a href = "../mypage/mypage.html" class="nav-link active fs-5" aria-current="page" href="#" >마이페이지</a>
+                    </li>
+                </ul> 
+            </nav>
+        </div>
+    </header>
     <div class="container mt-5">
         <h2 id="post-title"></h2>
         <p id="post-content"></p>

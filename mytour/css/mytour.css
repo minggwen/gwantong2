@@ -108,6 +108,7 @@
         }
 
         #placesListContainer li {
+            font-weight: 700;
             font-size: medium;
             margin-bottom: 5px;
             padding: 5px; /* 추가된 부분: 각 항목의 패딩 추가 */
