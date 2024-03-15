@@ -51,7 +51,7 @@
             const queryParams = new URLSearchParams(window.location.search);
             const postId = queryParams.get('id');
             const posts = JSON.parse(localStorage.getItem('posts')) || [];
-            const post = posts.find(post => post.id.toString() === postId);
+            const post = posts.find(post => post.id == postId);
 
             if (post) {
                 document.getElementById('post-title').textContent = post.title;
