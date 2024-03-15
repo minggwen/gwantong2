@@ -1,0 +1,272 @@
+/* Container for map and sidebar */
+/* 모달 스타일 */
+#myModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+#myModal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 10px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-height: 80%; /* 80% of viewport height */
+    overflow-y: auto; /* Enable vertical scroll if needed */
+}
+
+#map {
+    width: 100%; /* Set map width to fill container */
+}
+
+/* 닫기 버튼 스타일 */
+.close {
+    position: absolute;
+    color: #000;
+    top: 50px;
+    right: 109px;
+    font-size: 28px;
+    font-weight: bold;
+    z-index: 100;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+#container {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+/* Map styling */
+/* #map {
+    flex-grow: 1;
+    height: 500px; /* Adjust height as needed */
+
+/* Sidebar styling */
+#sidebar {
+    height: 500px; /* Adjust height to match map height */
+    overflow-y: auto; /* Enable scrolling for overflow content */
+    background-color: #f9f9f9;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for individual search result items */
+/* ...existing styles... */
+
+/* Style for individual search result items */
+.result-item {
+    display: grid;
+    grid-template-columns: auto 100px; /* Text takes up remaining space, image fixed at 100px */
+    grid-gap: 10px; /* Space between text and image */
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.result-item .info-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.result-item .image-container {
+    width: 100px; /* Set a fixed width for the image container */
+    height: 100px; /* Set a fixed height for the image container */
+}
+
+.result-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the area without losing aspect ratio */
+}
+
+.result-item .title {
+    font-weight: bold;
+    margin-bottom: 5px; /* Add some margin below the title */
+}
+
+.result-item .description {
+    font-size: 0.9em;
+    color: #555;
+    line-height: 1.2; /* Improve line spacing */
+}
+
+
+/* Centering the search area and enhancing its appearance */
+#search {
+    position: absolute;
+    z-index: 1000;
+    /* border-radius: 8px; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: px auto;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+}
+
+#search select, #search button {
+    flex: 1;
+    min-width: 120px; /* Ensures elements don't get too small */
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#search button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#search button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    #search {
+        flex-direction: column;
+    }
+}
+
+/* Styling for the map container */
+/* #map {
+    width: 100%;
+    height: 350px;
+    margin-top: 20px;
+} */
+
+/* Additional styles for the info window */
+.wrap {
+    position: absolute;
+    left: 0;
+    bottom: 40px;
+    width: 288px;
+    height: 132px;
+    margin-left: -144px;
+    text-align: left;
+    overflow: hidden;
+    font-size: 12px;
+    font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;
+    line-height: 1.5;
+}
+
+.wrap * {
+    padding: 0;
+    margin: 0;
+}
+
+.wrap .info {
+    width: 286px;
+    height: 120px;
+    border-radius: 5px;
+    border-bottom: 2px solid #ccc;
+    border-right: 1px solid #ccc;
+    overflow: hidden;
+    background: #fff;
+}
+
+.wrap .info:nth-child(1) {
+    border: 0;
+    box-shadow: 0px 1px 2px #888;
+}
+
+.info .title {
+    padding: 5px 0 0 10px;
+    height: 30px;
+    background: #eee;
+    border-bottom: 1px solid #ddd;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.info .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #888;
+    width: 17px;
+    height: 17px;
+    background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');
+}
+
+.info .close:hover {
+    cursor: pointer;
+}
+
+.info .body {
+    position: relative;
+    overflow: hidden;
+}
+
+.info .desc {
+    position: relative;
+    margin: 13px 0 0 90px;
+    height: 75px;
+}
+
+.desc .ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.desc .jibun {
+    font-size: 11px;
+    color: #888;
+    margin-top: -2px;
+}
+
+.info .img {
+    position: absolute;
+    top: 6px;
+    left: 5px;
+    width: 73px;
+    height: 71px;
+    border: 1px solid #ddd;
+    color: #888;
+    overflow: hidden;
+}
+
+.info:after {
+    content: '';
+    position: absolute;
+    margin-left: -12px;
+    left: 50%;
+    bottom: 0;
+    width: 22px;
+    height: 12px;
+    background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')
+}
+
+.info .link {
+    color: #5085BB;
+}
